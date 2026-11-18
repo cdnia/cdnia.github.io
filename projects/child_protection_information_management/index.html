@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08131d" />
+    <meta
+      name="description"
+      content="Étude de cas CDNIA : validation, révisions, consolidation et export CSV de données synthétiques avec Python."
+    />
+    <title>Child Protection Information Management — CDNIA</title>
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Passer au contenu</a>
+
+    <header>
+      <div class="wrap topbar">
+        <a class="brand" href="../../index.html" aria-label="CDNIA — Accueil">
+          <span class="mark" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </span>
+          CDNIA.
+        </a>
+        <nav aria-label="Navigation de la page">
+          <a class="nav-external" href="../../index.html#projects">
+            ← Retour aux projets
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="hero wrap" aria-labelledby="project-title">
+        <div class="hero-copy">
+          <div class="eyebrow">Étude de cas · Python · Qualité des données</div>
+          <h1 id="project-title">
+            Child Protection<br /><em>Information Management</em>
+          </h1>
+          <p>
+            Prototype personnel de traitement de rapports mensuels : contrôler
+            des données, gérer leurs révisions, consolider les observations
+            approuvées et produire un export CSV vérifiable.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button primary"
+              href="https://github.com/cdnia/child_protection_information_management"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Examiner le code source
+            </a>
+            <a class="button secondary" href="#method">
+              Comprendre le traitement
+            </a>
+          </div>
+          <div class="hero-mini">
+            <span class="line" aria-hidden="true"></span>
+            Projet indépendant · Aucune affiliation institutionnelle
+          </div>
+        </div>
+
+        <aside class="preview-shell" aria-labelledby="demo-title">
+          <div class="preview-head">
+            <div>
+              <small>SCÉNARIO FICTIF · MARS 2025</small>
+              <strong id="demo-title">Résultats de démonstration</strong>
+            </div>
+            <span class="status">Démo fictive</span>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Participations</span>
+              <strong class="metric-value">652</strong>
+              <span class="metric-desc">Pas des personnes distinctes</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Séances réalisées</span>
+              <strong class="metric-value">28</strong>
+              <span class="metric-desc">Dans le jeu de données fictif</span>
+            </div>
+          </div>
+          <div class="chart-panel">
+            <div class="chart-panel-head">
+              <strong>12 groupes consolidés</strong>
+              <span>2025-03</span>
+            </div>
+            <p class="chart-caption">
+              Regroupements par période, zone fictive, activité et indicateur.
+              Les valeurs sont illustratives et non des résultats humanitaires
+              réels.
+            </p>
+          </div>
+          <p class="visual-disclaimer">
+            Aucun dossier individuel ni aucune donnée personnelle réelle.
+          </p>
+        </aside>
+      </section>
+
+      <div class="wrap sections">
+        <section id="problem" aria-labelledby="problem-title">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">01 / Problème traité</div>
+              <h2 id="problem-title">
+                Des fichiers reçus.<br />Des décisions traçables.
+              </h2>
+            </div>
+            <p>
+              Plusieurs partenaires fictifs transmettent des rapports qui
+              peuvent être corrigés. Additionner sans contrôler les versions
+              risquerait de produire un résultat trompeur.
+            </p>
+          </div>
+          <div class="expertise">
+            <article class="expertise-card">
+              <span class="expertise-number">01 /</span>
+              <h3>Référentiels</h3>
+              <p>Contrôler les codes autorisés, les champs et les relations.</p>
+            </article>
+            <article class="expertise-card">
+              <span class="expertise-number">02 /</span>
+              <h3>Révisions</h3>
+              <p>Vérifier les chaînes de versions d'un même rapport.</p>
+            </article>
+            <article class="expertise-card">
+              <span class="expertise-number">03 /</span>
+              <h3>Consolidation</h3>
+              <p>Retenir la dernière révision approuvée de chaque rapport.</p>
+            </article>
+            <article class="expertise-card">
+              <span class="expertise-number">04 /</span>
+              <h3>Restitution</h3>
+              <p>Produire des résultats consolidés et un export CSV.</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="divider" role="presentation"></div>
+
+        <section id="method" aria-labelledby="method-title">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">02 / Méthode</div>
+              <h2 id="method-title">
+                Du contrôle qualité<br />à la consolidation.
+              </h2>
+            </div>
+            <p>
+              Le programme valide les données avant toute consolidation. Une
+              validation échouée ou incomplète bloque la production des
+              résultats.
+            </p>
+          </div>
+          <div class="featured">
+            <div class="feature-visual">
+              <div
+                class="schematic"
+                role="group"
+                aria-label="Étapes du pipeline Python"
+              >
+                <div class="pipeline-header">PIPELINE PYTHON · DONNÉES CSV</div>
+                <div class="pipeline-node">
+                  <span>01 · Sources synthétiques</span><span>8 CSV</span>
+                </div>
+                <div class="pipeline-arrow" aria-hidden="true">↓</div>
+                <div class="pipeline-node">
+                  <span>02 · Validation progressive</span><span>5 étapes</span>
+                </div>
+                <div class="pipeline-arrow" aria-hidden="true">↓</div>
+                <div class="pipeline-node">
+                  <span>03 · Dernières révisions approuvées</span
+                  ><span>sélection</span>
+                </div>
+                <div class="pipeline-arrow" aria-hidden="true">↓</div>
+                <div class="pipeline-node result">
+                  <span>04 · Consolidation et export</span><span>CSV</span>
+                </div>
+              </div>
+            </div>
+            <div class="feature-content">
+              <span class="tiny-label">Implémentation consultable</span>
+              <h3>Une chaîne de traitement reproductible</h3>
+              <p>
+                Cinq étapes de validation produisent les états PASS, FAIL ou
+                SKIPPED. Les observations de versions remplacées ne sont pas
+                additionnées. Une interface en ligne de commande permet de
+                valider, consolider et exporter les résultats.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Python 3.13</span>
+                <span class="tag">uv</span>
+                <span class="tag">Pytest</span>
+                <span class="tag">CSV</span>
+              </div>
+              <a
+                class="feature-link"
+                href="https://github.com/cdnia/child_protection_information_management/blob/master/README.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lire les instructions de reproduction →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <div class="divider" role="presentation"></div>
+
+        <section id="proof" aria-labelledby="proof-title">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">03 / Preuves et limites</div>
+              <h2 id="proof-title">
+                Vérifier les résultats.<br />Reconnaître les limites.
+              </h2>
+            </div>
+            <p>
+              Un portfolio technique doit permettre d'examiner le code et de
+              comprendre ce qui a réellement été testé.
+            </p>
+          </div>
+          <div class="practice-list">
+            <div class="practice-step">
+              <span class="number">01</span>
+              <div>
+                <strong>Tests automatisés</strong>
+                <span
+                  >219 tests Pytest réussis lors du contrôle documenté du 1er
+                  novembre 2026. Ils n'ont pas été relancés pour cette
+                  page.</span
+                >
+              </div>
+            </div>
+            <div class="practice-step">
+              <span class="number">02</span>
+              <div>
+                <strong>Documentation vérifiable</strong>
+                <span
+                  >Le dépôt contient le dictionnaire de données, les règles de
+                  validation et les procédures d'exécution.</span
+                >
+              </div>
+            </div>
+            <div class="practice-step">
+              <span class="number">03</span>
+              <div>
+                <strong>Limites explicites</strong>
+                <span
+                  >Prototype pédagogique sans déploiement humanitaire réel. Les
+                  données sont fictives ; la validation technique ne remplace
+                  pas une approbation métier.</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <div>
+          © 2026 CDNIA · Projet personnel de démonstration.<br />
+          Données entièrement synthétiques.
+        </div>
+        <a href="../../index.html#projects">Retour au portfolio ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
